@@ -6,8 +6,10 @@ import {
   Button,
   Image,
   TouchableOpacity,
+  ScrollView
 } from 'react-native';
-import {TextInput, TouchableRipple} from 'react-native-paper';
+import {TextInput, } from 'react-native-paper';
+
 
 const Hello = () => {
   // Text input
@@ -20,6 +22,7 @@ const Hello = () => {
     console.log('Password : ' + PassWord);
   }
   return (
+  //  <ScrollView>
     <View style={styles.container}>
       <View>
         <Text style={styles.title}>WELCOME,</Text>
@@ -50,9 +53,7 @@ const Hello = () => {
         <TouchableOpacity>
           <Text style={styles.forgotPas}>Forgot Password?</Text>
         </TouchableOpacity>
-      </View>
-
-      <View style={styles.Submitbutton}>
+        <View style={styles.Submitbutton}>
         <Button
           onPress={LearnMore}
           title="Login"
@@ -60,29 +61,34 @@ const Hello = () => {
           accessibilityLabel="Learn more about this purple button"
         />
         <TouchableOpacity>
-        <View style={styles.FbLogin}>
-          <View style={styles.FBloginView}>
-            <Image
-              style={styles.tinyLogo}
-              source={require('./assets/images/facebook.png')}
-            />
+          <View style={styles.FbLogin}>
+            <View style={styles.FBloginView}>
+              <Image
+                style={styles.tinyLogo}
+                source={require('./assets/images/facebook.png')}
+              />
+            </View>
+            <View style={styles.FBloginView}>
+              <Text style={styles.FBLoginText}>Connect With Facebook</Text>
+            </View>
           </View>
-          <View style={styles.FBloginView}>
-            <Text style={styles.FBLoginText}>Connect With Facebook</Text>
-          </View>
-        </View>
-      </TouchableOpacity>
+        </TouchableOpacity>
+      </View>
       </View>
 
       
 
       <View style={styles.SignUp}>
-        <Text style={{color: 'black', fontWeight: '500' , fontSize: 13}}> I'm a new User,</Text>
+        <Text style={{color: 'black', fontWeight: '500', fontSize: 13}}>
+          {' '}
+          I'm a new User,
+        </Text>
         <TouchableOpacity>
-          <Text style={{color: 	'#EE82EE', fontWeight: '500'}}> Sign Up </Text>
+          <Text style={{color: '#EE82EE', fontWeight: '500'}}> Sign Up </Text>
         </TouchableOpacity>
       </View>
     </View>
+    // </ScrollView>
   );
 };
 const styles = StyleSheet.create({
@@ -107,7 +113,7 @@ const styles = StyleSheet.create({
   },
   email: {
     overflow: 'visible',
-    marginTop: '20%',
+    // marginTop: '20%',
     borderradius: 50,
   },
 
@@ -119,12 +125,13 @@ const styles = StyleSheet.create({
     fontWeight: '500',
   },
   Submitbutton: {
-    borderradius: 50,
+    borderradius: 30,
     marginTop: 32,
   },
   tinyLogo: {
     height: 20,
     width: 20,
+    // borderradius: 10,
   },
   FbLogin: {
     margin: 20,
