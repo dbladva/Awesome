@@ -36,6 +36,7 @@ const Hello = () => {
           style={{margin: 10, textAlign: 'left'}}
           mode="outlined"
           activeOutlineColor="#3399ff"
+          // selectionColor = 'red'
           outlineColor="grey"
           onChangeText={text => setText(text)}
         />
@@ -45,12 +46,13 @@ const Hello = () => {
           placeholder="Password"
           style={{borderRadius: 50, margin: 10, textAlign: 'left'}}
           mode="outlined"
+          // mode="flat",
           secureTextEntry={true}
           outlineColor="gray"
           activeOutlineColor="#3399ff"
           onChangeText={PassWord => setPassword(PassWord)}
         />
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => {console.log("Forgot Password")}}>
           <Text style={styles.forgotPas}>Forgot Password?</Text>
         </TouchableOpacity>
         <View style={styles.Submitbutton}>
@@ -60,7 +62,7 @@ const Hello = () => {
           color="#3399ff"
           accessibilityLabel="Learn more about this purple button"
         />
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => {console.log("FB Login Pressed")}}>
           <View style={styles.FbLogin}>
             <View style={styles.FBloginView}>
               <Image
@@ -69,7 +71,7 @@ const Hello = () => {
               />
             </View>
             <View style={styles.FBloginView}>
-              <Text style={styles.FBLoginText}>Connect With Facebook</Text>
+              <Text style={styles.FBLoginText}>Connect With Facebook.</Text>
             </View>
           </View>
         </TouchableOpacity>
@@ -83,7 +85,7 @@ const Hello = () => {
           {' '}
           I'm a new User,
         </Text>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => {console.log("New User")}}>
           <Text style={{color: '#EE82EE', fontWeight: '500'}}> Sign Up </Text>
         </TouchableOpacity>
       </View>
@@ -131,7 +133,6 @@ const styles = StyleSheet.create({
   tinyLogo: {
     height: 20,
     width: 20,
-    // borderradius: 10,
   },
   FbLogin: {
     margin: 20,
@@ -154,5 +155,4 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
   },
 });
-
 export default Hello;

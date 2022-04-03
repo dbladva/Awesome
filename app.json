@@ -1,4 +1,6 @@
 {
   "name": "Awesome",
-  "displayName": "Awesome"
+  "displayName": "Awesome",
+  "orientation": "portrait",
+  "icon": ""
 }
