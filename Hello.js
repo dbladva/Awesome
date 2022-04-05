@@ -7,14 +7,18 @@ import {
   Image,
   TouchableOpacity,
 } from 'react-native';
-import validator from 'validator';
 import {TextInput} from 'react-native-paper';
+import Input from './src/component/Input';
 
 const Hello = () => {
   // Text input
   const [EmailID, setText] = React.useState('');
   const [PassWord, setPassword] = React.useState('');
 
+  function LearnMore(){
+    console.log("Email  = " + EmailID);
+    console.log("Password = " + PassWord);
+  }
  
 
   return (
@@ -36,6 +40,8 @@ const Hello = () => {
           outlineColor="grey"
           onChangeText={text => setText(text)}
         />
+
+    
         <TextInput
           label="Password"
           value={PassWord}
@@ -56,7 +62,7 @@ const Hello = () => {
         </TouchableOpacity> 
         <View style={styles.Submitbutton}>
           <Button
-            // onPress={LearnMore}
+            onPress={LearnMore}
             title="Login"
             color="#3399ff"
             accessibilityLabel="Learn more about this purple button"
