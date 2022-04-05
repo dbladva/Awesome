@@ -6,23 +6,19 @@ import {
   Button,
   Image,
   TouchableOpacity,
-  ScrollView
 } from 'react-native';
-import {TextInput, } from 'react-native-paper';
-
+import validator from 'validator';
+import {TextInput} from 'react-native-paper';
 
 const Hello = () => {
   // Text input
   const [EmailID, setText] = React.useState('');
   const [PassWord, setPassword] = React.useState('');
 
-  function LearnMore() {
-    alert('Hello');
-    console.log('ID  : ' + EmailID);
-    console.log('Password : ' + PassWord);
-  }
+ 
+
   return (
-  //  <ScrollView>
+    //  <ScrollView>
     <View style={styles.container}>
       <View>
         <Text style={styles.title}>WELCOME,</Text>
@@ -52,40 +48,47 @@ const Hello = () => {
           activeOutlineColor="#3399ff"
           onChangeText={PassWord => setPassword(PassWord)}
         />
-        <TouchableOpacity onPress={() => {console.log("Forgot Password")}}>
+        <TouchableOpacity
+          onPress={() => {
+            console.log('Forgot Password');
+          }}>
           <Text style={styles.forgotPas}>Forgot Password?</Text>
-        </TouchableOpacity>
+        </TouchableOpacity> 
         <View style={styles.Submitbutton}>
-        <Button
-          onPress={LearnMore}
-          title="Login"
-          color="#3399ff"
-          accessibilityLabel="Learn more about this purple button"
-        />
-        <TouchableOpacity onPress={() => {console.log("FB Login Pressed")}}>
-          <View style={styles.FbLogin}>
-            <View style={styles.FBloginView}>
-              <Image
-                style={styles.tinyLogo}
-                source={require('./assets/images/facebook.png')}
-              />
+          <Button
+            // onPress={LearnMore}
+            title="Login"
+            color="#3399ff"
+            accessibilityLabel="Learn more about this purple button"
+          />
+          <TouchableOpacity
+            onPress={() => {
+              console.log('FB Login Pressed');
+            }}>
+            <View style={styles.FbLogin}>
+              <View style={styles.FBloginView}>
+                <Image
+                  style={styles.tinyLogo}
+                  source={require('./assets/images/facebook.png')}
+                />
+              </View>
+              <View style={styles.FBloginView}>
+                <Text style={styles.FBLoginText}>Connect With Facebook.</Text>
+              </View>
             </View>
-            <View style={styles.FBloginView}>
-              <Text style={styles.FBLoginText}>Connect With Facebook.</Text>
-            </View>
-          </View>
-        </TouchableOpacity>
+          </TouchableOpacity>
+        </View>
       </View>
-      </View>
-
-      
 
       <View style={styles.SignUp}>
         <Text style={{color: 'black', fontWeight: '500', fontSize: 13}}>
           {' '}
           I'm a new User,
         </Text>
-        <TouchableOpacity onPress={() => {console.log("New User")}}>
+        <TouchableOpacity
+          onPress={() => {
+            console.log('New User');
+          }}>
           <Text style={{color: '#EE82EE', fontWeight: '500'}}> Sign Up </Text>
         </TouchableOpacity>
       </View>
@@ -93,6 +96,8 @@ const Hello = () => {
     // </ScrollView>
   );
 };
+export default Hello;
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -155,4 +160,3 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
   },
 });
-export default Hello;
