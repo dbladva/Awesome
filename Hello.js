@@ -126,7 +126,6 @@ const styles = StyleSheet.create({
   },
   email: {
     overflow: 'visible',
-    // marginTop: '20%',
     borderradius: 50,
   },
 
