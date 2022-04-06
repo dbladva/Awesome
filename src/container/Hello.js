@@ -8,7 +8,6 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import {TextInput} from 'react-native-paper';
-import Input from './src/component/Input';
 
 const Hello = () => {
   // Text input
