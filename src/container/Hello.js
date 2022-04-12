@@ -13,13 +13,11 @@ const Hello = () => {
   // Text input
   const [EmailID, setText] = React.useState('');
   const [PassWord, setPassword] = React.useState('');
-
   function LearnMore(){
     console.log("Email  = " + EmailID);
     console.log("Password = " + PassWord);
   }
  
-
   return (
     //  <ScrollView>
     <View style={styles.container}>
