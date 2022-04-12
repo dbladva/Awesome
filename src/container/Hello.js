@@ -74,7 +74,7 @@ const Hello = () => {
               <View style={styles.FBloginView}>
                 <Image
                   style={styles.tinyLogo}
-                  source={require('./assets/images/facebook.png')}
+                  source={require('../../assets/images/facebook.png')}
                 />
               </View>
               <View style={styles.FBloginView}>
