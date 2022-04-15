@@ -6,13 +6,13 @@ import Destructuring from './src/container/Desturcturing'
 import Medi_State_Fun from './src/container/Medi_State_Fun'
 import Medi_State_class from './src/container/Medi_State_class'
 import Props_Medi_Demo from './src/container/Props_Medi_Demo'
+import Rnclc from './src/container/Rnclc'
 
 export default function App() {
   return (
-    <View>
-      {/* <Medi_State_Fun /> */}
-      {/* <Medi_State_class /> */}
-      <Props_Medi_Demo />
+    <View style={{ marginTop: 50,}}>
+   
+      <Rnclc />
       </View>
   )
 }

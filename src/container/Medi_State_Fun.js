@@ -51,6 +51,7 @@ export default function Medi_State_Fun() {
                 backgroundColor: 'rgba(232, 38, 138, 0.27)',
                 margin: 20,
                 borderRadius: 10,
+               
             }}>
             {MedicineData.map(a => {
                 const { id, name } = a;
@@ -58,6 +59,7 @@ export default function Medi_State_Fun() {
                 const [fname, setName] = useState(name);
 
                 const learn = () => {
+                    
                     setName(id);
                 };
                 return (

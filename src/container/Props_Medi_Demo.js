@@ -1,5 +1,5 @@
-import {View, Text, Button} from 'react-native';
-import React, {useState} from 'react';
+import { View, Text, Button } from 'react-native';
+import React, { useState } from 'react';
 import Props_Medi_Data from './Props_Medi_Data';
 
 export default function Props_Medi_Demo(props) {
@@ -48,54 +48,18 @@ export default function Props_Medi_Demo(props) {
 
   return (
     <View>
-      {MedicineData.map(a => {
-        const {id, name} = a;
-        const [fname, setName] = useState(name);
+      {MedicineData.map((a) => {
+        let { id, name } = a
 
-        const learn = () => {
-          if (fname === name) {
-            const {price, expiry, quantity} = a
-            console.log(name);
-            console.log('price :' + price);
-            console.log('Expiry :' + expiry);
-            console.log('Quantity :' + quantity);
-            setName(id);  
-            return(
-              <Props_Medi_Data id="100" a = {price} price={price} expiry={expiry} Quantity={quantity}/>
-            )
-          }
-        };
-
-      
         return (
-          <View
-            style={{
-              alignItems: 'center',
-              flexDirection: 'row',
-              width: '100%',
-              margin: 10,
-              justifyContent: 'space-evenly',
-            }}>
-            <Text
-              style={{
-                fontSize: 25,
-                textAlign: 'left',
-                width: '50%',
-                borderBottomWidth: 1,
-              }}>
-              {fname}
-            </Text>
-            <Button
-              style={{width: '50%', borderRadius: 10}}
-              onPress={learn}
-              title="Click😃"
-              color="rgba(2, 255, 200, 0.61)"
-            />
+          <View>
+            <Text>{name}</Text>
+            <Props_Medi_Data id />
           </View>
-        );
+        )
+        
       })}
-      {/* <Props_Medi_Data id="100" /> */}
-      <Props_Medi_Data/>
+
     </View>
   );
 }
