@@ -7,12 +7,13 @@ import Medi_State_Fun from './src/container/Medi_State_Fun'
 import Medi_State_class from './src/container/Medi_State_class'
 import Props_Medi_Demo from './src/container/Props_Medi_Demo'
 import Rnclc from './src/container/Rnclc'
+import Watch from './src/container/Watch'
 
 export default function App() {
   return (
-    <View style={{ marginTop: 50,}}>
-   
-      <Rnclc />
+    <View style={{}}>
+      {/* <Rnclc /> */}
+      <Watch />
       </View>
   )
 }
