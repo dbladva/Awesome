@@ -33,7 +33,7 @@ export default class Rnclc extends Component {
           <Text>
             {this.state.time.toLocaleTimeString()}
           </Text>
-      </View>
+      </View>   
     );
   }
 }
