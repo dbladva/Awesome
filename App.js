@@ -10,7 +10,7 @@ import Rnclc from './src/container/Rnclc'
 import Watch from './src/container/Watch'
 import Rnfclc from './src/container/Rnfclc'
 
-export default function App() {
+export default function App() { 
   return (
     <View style={{flex: 1,justifyContent: 'center',alignItems: 'center',}}>
       <Rnfclc />
