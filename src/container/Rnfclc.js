@@ -1,6 +1,6 @@
 import { View, Text } from 'react-native'
 import React, { useState, useEffect } from 'react'
-import LinearGradient from 'react-native-linear-gradient';
+
 
 // React Native function component life cycle 
 
@@ -25,11 +25,7 @@ export default function Rnfclc() {
             <Text style={{ fontSize: 40, shadowOpacity: 2, fontWeight: 'bold', shadowColor: '#ADA19F', shadowOffset: { height: 6, width: 5 }, shadowRadius: 2 }}>{Time.toLocaleTimeString()}</Text>
             <Text style={{ fontSize: 25, }}>{Time.toDateString()}</Text>
 
-            <LinearGradient colors={['#4c669f', '#3b5998', '#192f6a']} >
-                <Text >
-                    Sign in with Facebook
-                </Text>
-            </LinearGradient>
+        
         </View>
     )
 }
