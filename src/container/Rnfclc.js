@@ -8,7 +8,7 @@ export default function Rnfclc() {
 
     const [Time, setTime] = useState(new Date())
 
-    const Tick = () => {
+    const Tick = () => {    
         setTime(new Date())
     }
 
