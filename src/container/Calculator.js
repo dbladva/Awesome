@@ -1,30 +1,77 @@
-import { View, Text, StyleSheet } from 'react-native'
-import React from 'react'
+import {View, Text, StyleSheet} from 'react-native';
+import React from 'react';
 
 export default function Calculator() {
+  const arr = [
+    ' C ',
+    ' () ',
+    ' % ',
+    ' / ',
+    ' 7 ',
+    ' 8 ',
+    ' 9 ',
+    ' * ',
+    ' 4 ',
+    ' 5 ',
+    ' 6 ',
+    ' - ',
+    ' 1 ',
+    ' 2 ',
+    ' 3 ',
+    ' + ',
+    '+/-',
+    ' 0 ',
+    ' . ',
+    ' = ',
+  ];
 
-  const arr = [" C ", " () ", " % ", " / ", " 7 ", " 8 ", " 9 ", " * ", " 4 ", " 5 ", " 6 ", " - ", " 1 ", " 2 ", " 3 ", " + ", "+/-", " 0 ", " . ", " = "]
-
-  arr.map((a) => {
+  arr.map(a => {
     console.log(a);
-  })
+  });
   return (
     <View style={styles.container}>
-      <View style={styles.InputView}> 
-      </View >
+      <View style={styles.InputView}></View>
       <View style={styles.btnMainView}>
-        {
-          arr.map((Key, index) => {
-              return (
-                <View style={styles.Button}>
-                  <Text style={styles.btnText}>{Key}</Text>
-                  </View>
-              )
-          })
-        }
+        {arr.map((Key, index) => {
+          return (
+            <View style={styles.Button}>
+              {/* <View style={index == 0 ? {color: 'red'} : {color : 'white'} }> */}
+
+              {/* <Text style={styles.btnText} >{Key}</Text> */}
+              <Text
+                style={
+                  index == 0 || index == 1 || index == 2 || index==3 || index == 7 || index == 11 || index == 15 || index == 19
+                    ? {
+                        marginTop: 5,
+                        color: 'green',
+                        padding: 18,
+                        fontSize: 30,
+                        borderWidth: 0.01,
+                        borderColor: 'red',
+                        borderRadius: 200,
+                        textAlign: 'center',
+                        backgroundColor: 'rgba(31,31,31,255)',
+                      }
+                    : {
+                        marginTop: 5,
+                        color: 'white',
+                        padding: 18,
+                        fontSize: 30,
+                        borderWidth: 0.01,
+                        borderColor: 'red',
+                        borderRadius: 200,
+                        textAlign: 'center',  
+                        backgroundColor: 'rgba(31,31,31,255)',
+                      }
+                }>
+                {Key}
+              </Text>
+            </View>
+          );
+        })}
       </View>
     </View>
-  )
+  );
 }
 
 const styles = StyleSheet.create({
@@ -40,24 +87,24 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomLeftRadius: 20,
     borderBottomRightRadius: 20,
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
   btnMainView: {
-   flex: 1, 
+    flex: 1,
     marginTop: 20,
     flexDirection: 'row',
     flexWrap: 'wrap',
   },
   btnText: {
     marginTop: 5,
-    color: "white",   
-    padding: 15,
+    color: 'white',
+    padding: 18,
     fontSize: 30,
     borderWidth: 0.01,
     borderColor: 'red',
-    borderRadius: 200 , 
+    borderRadius: 200,
     textAlign: 'center',
-    backgroundColor: "rgba(31,31,31,255)", 
+    backgroundColor: 'rgba(31,31,31,255)',
   },
   Button: {
     minWidth: '25%',
@@ -65,4 +112,4 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-})
+});
