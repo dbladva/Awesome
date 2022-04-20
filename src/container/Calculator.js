@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet,Pressable} from 'react-native';
 import React, { useState } from 'react';
 
 export default function Calculator() {
@@ -131,7 +131,7 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomLeftRadius: 20,
     borderBottomRightRadius: 20,
-    justifyContent: 'center',
+    justifeyContent: 'cnter',
   },
   btnMainView: {
     flex: 1.2,
@@ -165,6 +165,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   red: {
+    padding: 10,
     marginTop: 5,
     color: 'green',
     fontSize: 30,
@@ -172,14 +173,17 @@ const styles = StyleSheet.create({
     borderColor: 'red',
     borderRadius: 100,
     textAlign: 'center',
+   
   },  
   white: {
     marginTop: 5,
+    padding: 10,
     color: 'white',
     fontSize: 30,
     borderWidth: 0.01,
     borderColor: 'red',
     borderRadius: 200,
     textAlign: 'center',
+  
   }
 });
