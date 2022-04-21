@@ -1,4 +1,4 @@
-import { View, Text } from 'react-native'
+import { View, Text, SafeAreaView } from 'react-native'
 import React from 'react'
 import Hello from './src/container/Hello'
 import MedicineData from './src/container/MedicineData'
@@ -9,11 +9,14 @@ import Props_Medi_Demo from './src/container/Props_Medi_Demo'
 import Rnclc from './src/container/Rnclc'
 import Rnfclc from './src/container/Rnfclc'
 import Calculator from './src/container/Calculator'
+import BMIcalculator from './src/container/BMIcalculator'
 
-export default function App() { 
+export default function App() {
   return (
-    <View style={{flex: 1}}>
-      <Calculator />
+    <View style={{flex: 1,}
+    }>
+        <BMIcalculator />
       </View>
+    
   )
 }
