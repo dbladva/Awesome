@@ -10,12 +10,14 @@ import Rnclc from './src/container/Rnclc'
 import Rnfclc from './src/container/Rnfclc'
 import Calculator from './src/container/Calculator'
 import BMIcalculator from './src/container/BMIcalculator'
+import NewCalculator from './src/container/NewCalculator'
 
 export default function App() {
   return (
     <View style={{flex: 1,}
     }>
         <BMIcalculator />
+   
       </View>
     
   )

@@ -2,7 +2,7 @@ import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import Pressable from 'react-native/Libraries/Components/Pressable/Pressable';
 
-const Calculator = () => {
+const NewCalculator = () => {
   const arr = [
     'C',
     'DEL',
@@ -57,4 +57,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Calculator;
+export default NewCalculator;
