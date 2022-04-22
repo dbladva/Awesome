@@ -1,38 +1,38 @@
-import { View, Text, StyleSheet, TextInput, Button, Image } from 'react-native';
-import React, { useState } from 'react';
+import {View, Text, StyleSheet, TextInput, Button, Image} from 'react-native';
+import React, {useState} from 'react';
 
 export default function BMIcalculator() {
-  const [bmiResult, setBmiResult] = useState('')
+  const [bmiResult, setBmiResult] = useState('');
 
   const [result, setResult] = useState(result);
 
-  const [height, setHeight] = useState('')
-  const [weight, setWeight] = useState('')
+  const [height, setHeight] = useState('');
+  const [weight, setWeight] = useState('');
 
   const Calculate = (height, weight) => {
-    let count = (parseFloat(weight) * 10000 ) / (parseFloat(height) * parseFloat(height));
-    count = count.toFixed(2)
+    let count =
+      (parseFloat(weight) * 10000) / (parseFloat(height) * parseFloat(height));
+    count = count.toFixed(2);
     setResult(count);
 
     if (result < 18.5) {
-      setBmiResult('UnderWeight')
+      setBmiResult('UnderWeight');
     } else if (result >= 18.5 && result < 25) {
-      setBmiResult('Normal')
-    }
-    else if (result >= 25 && result <= 30) {
-      setBmiResult('OverWeight')
+      setBmiResult('Normal');
+    } else if (result >= 25 && result <= 30) {
+      setBmiResult('OverWeight');
     } else if (result > 30) {
-      setBmiResult('Obesity')
+      setBmiResult('Obesity');
     } else {
-      "Calculate Result :"
+      ('Calculate Result :');
     }
-  }
-  const heightHendler = (text) => {
+  };
+  const heightHendler = text => {
     setHeight(text);
-  }
-  const weightHendler = (text) => {
-    setWeight(text)
-  }
+  };
+  const weightHendler = text => {
+    setWeight(text);
+  };
 
   console.log(result);
   return (
@@ -48,35 +48,29 @@ export default function BMIcalculator() {
           <View>
             <Text style={styles.genderTitle}>Gender</Text>
             <TextInput style={styles.input} placeholder="Gender" />
-
           </View>
           <View>
             <Text style={styles.genderTitle}>Age</Text>
             <TextInput style={styles.input} placeholder="Age" />
-
           </View>
         </View>
-        <View style={[{ marginTop: 50 }, styles.hWView]}>
+        <View style={[{marginTop: 50}, styles.hWView]}>
           <View>
             <Text style={styles.genderTitle}>Height(cm)</Text>
-            <TextInput style={styles.input}
+            <TextInput
+              style={styles.input}
               placeholder="Height"
-              onChangeText={(hValue) =>
-                heightHendler(hValue)
-
-              }
+              onChangeText={hValue => heightHendler(hValue)}
             />
           </View>
           <View>
             <Text style={styles.genderTitle}>Weight(Kg)</Text>
-            <TextInput style={styles.input}
+            <TextInput
+              style={styles.input}
               placeholder="Weight"
-              onChangeText={(wValue) =>
-                weightHendler(wValue)
-              }
+              onChangeText={wValue => weightHendler(wValue)}
             />
           </View>
-
         </View>
       </View>
 
@@ -87,57 +81,57 @@ export default function BMIcalculator() {
           color="#00FFFF"
         />
       </View>
-      <View >
+      <View>
+        <View style={{alignSelf: 'center'}}>
+          {bmiResult === 'UnderWeight' && (
+            <Text style={styles.resultText}>{bmiResult}</Text>
+          )}
 
-        <View style={{ alignSelf: 'center', }}>
-          {
-            bmiResult === 'UnderWeight' &&
+          {bmiResult === 'Normal' && (
             <Text style={styles.resultText}>{bmiResult}</Text>
-          }
-
-          {
-            bmiResult === 'Normal' &&
+          )}
+          {bmiResult === 'OverWeight' && (
             <Text style={styles.resultText}>{bmiResult}</Text>
-          }
-          {
-            bmiResult === 'OverWeight' &&
+          )}
+          {bmiResult === 'Obesity' && (
             <Text style={styles.resultText}>{bmiResult}</Text>
-          }{
-            bmiResult === 'Obesity' &&
-            <Text style={styles.resultText}>{bmiResult}</Text>
-          }
+          )}
         </View>
 
-        <View style={{ flexDirection: 'row' }}>
-          
-          <View style={{ borderWidth: 5, borderColor: 'red', width: '25%', }} />
-          <View style={{ borderWidth: 5, borderColor: 'blue', width: '25%', }} />
-          <View style={{ borderWidth: 5, borderColor: 'orange', width: '25%', }} />
-          <View style={{ borderWidth: 5, borderColor: 'yellow', width: '25%', }} />
+        <View style={{flexDirection: 'row'}}>
+          <View style={{borderWidth: 5, borderColor: 'red', width: '25%'}} />
+          <View style={{borderWidth: 5, borderColor: 'blue', width: '25%'}} />
+          <View style={{borderWidth: 5, borderColor: 'orange', width: '25%'}} />
+          <View style={{borderWidth: 5, borderColor: 'yellow', width: '25%'}} />
         </View>
 
-
-        <View style={{ flexDirection: 'row', }}>
-          {
-            bmiResult === 'UnderWeight' &&
-          <Image style={styles.ArrowLogoRed} source={(require('../../src/container/images/up-arrow.png'))} />
-        }
-          {
-            bmiResult === 'Normal' &&
-          <Image style={styles.ArrowLogoBlue} source={(require('../../src/container/images/up-arrow.png'))} />
-        }
-        {
-            bmiResult === 'OverWeight' &&
-          <Image style={styles.ArrowLogoOrange} source={(require('../../src/container/images/up-arrow.png'))} />
-        }
-        {
-            bmiResult === 'Obesity' &&
-          <Image style={styles.ArrowLogoYellow} source={(require('../../src/container/images/up-arrow.png'))} />
-        }
+        <View style={{flexDirection: 'row'}}>
+          {bmiResult === 'UnderWeight' && (
+            <Image
+              style={styles.ArrowLogoRed}
+              source={require('../../src/container/images/up-arrow.png')}
+            />
+          )}
+          {bmiResult === 'Normal' && (
+            <Image
+              style={styles.ArrowLogoBlue}
+              source={require('../../src/container/images/up-arrow.png')}
+            />
+          )}
+          {bmiResult === 'OverWeight' && (
+            <Image
+              style={styles.ArrowLogoOrange}
+              source={require('../../src/container/images/up-arrow.png')}
+            />
+          )}
+          {bmiResult === 'Obesity' && (
+            <Image
+              style={styles.ArrowLogoYellow}
+              source={require('../../src/container/images/up-arrow.png')}
+            />
+          )}
         </View>
       </View>
-
-
     </View>
   );
 }
@@ -204,7 +198,6 @@ const styles = StyleSheet.create({
     tintColor: 'red',
     position: 'absolute',
     left: '7%',
-
   },
   ArrowLogoBlue: {
     height: 30,
@@ -231,5 +224,5 @@ const styles = StyleSheet.create({
   resultText: {
     fontSize: 25,
     fontWeight: 'bold',
-  }
+  },
 });
