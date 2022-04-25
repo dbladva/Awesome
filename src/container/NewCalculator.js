@@ -6,7 +6,7 @@ import {
   TouchableOpacity,
   StatusBar,
 } from 'react-native';
-import SwitchWithIcons from 'react-native-switch-with-icons';
+import Toggle from 'react-native-toggle-element';
 
 const NewCalculator = () => {
   const arr = [
@@ -55,11 +55,27 @@ const NewCalculator = () => {
   return (
     <View style={styles.container}>
       <View style={styles.OutputView}>
-        <SwitchWithIcons
-          onValueChange={value =>
-            console.log(`Value has been updated to ${value}`)
-          }
-        />
+
+      <ToggleButton
+  value={toggleValue}
+  onPress={(newState) => setToggleValue(newState)}
+  thumbActiveComponent={
+    <Icon name="sun" width="40" height="40" fill={'#3BD2B5'} />
+  }
+  thumbInActiveComponent={
+    <Icon name="night" width="40" height="40" fill={'#03452C'} />
+  }
+  trackBar={{
+    activeBackgroundColor: '#9ee3fb',
+    inActiveBackgroundColor: '#3c4145',
+    borderActiveColor: '#86c3d7',
+    borderInActiveColor: '#1c1c1c',
+    borderWidth: 5,
+    width: 100,
+  }}
+/>
+
+        
         <Text style={styles.resultText}>{equation}</Text>
       </View>
 
