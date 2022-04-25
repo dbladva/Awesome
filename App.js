@@ -13,12 +13,12 @@ import BMIcalculator from './src/container/BMIcalculator'
 import NewCalculator from './src/container/NewCalculator'
 import GSTcalculator from './src/container/GSTcalculator'
 
-export default function App() {
+export default function App() { 
   return (
     <View style={{flex: 1}}>
       {/* <BMIcalculator /> */}
-      {/* <NewCalculator /> */}
-      <GSTcalculator />
+      {/* <GSTcalculator /> */}
+      <NewCalculator />
     </View>
   );
 }

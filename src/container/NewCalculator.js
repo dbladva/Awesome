@@ -1,5 +1,12 @@
 import React, {useState} from 'react';
-import {StyleSheet, Text, View,TouchableOpacity,StatusBar} from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  TouchableOpacity,
+  StatusBar,
+} from 'react-native';
+import SwitchWithIcons from 'react-native-switch-with-icons';
 
 const NewCalculator = () => {
   const arr = [
@@ -25,7 +32,6 @@ const NewCalculator = () => {
     '=',
   ];
 
-  
   const [equation, setEquation] = useState('');
 
   const handelEuation = k => {
@@ -37,7 +43,7 @@ const NewCalculator = () => {
   };
 
   const handelDelet = () => {
-    setEquation(equation.substring(0,equation.length - 1));
+    setEquation(equation.substring(0, equation.length - 1));
   };
   const handelEqual = () => {
     if (equation !== '') {
@@ -49,6 +55,11 @@ const NewCalculator = () => {
   return (
     <View style={styles.container}>
       <View style={styles.OutputView}>
+        <SwitchWithIcons
+          onValueChange={value =>
+            console.log(`Value has been updated to ${value}`)
+          }
+        />
         <Text style={styles.resultText}>{equation}</Text>
       </View>
 
@@ -58,7 +69,7 @@ const NewCalculator = () => {
             key === '-' ||
             key === '*' ||
             key === '/' ||
-            key === '%' ? 
+            key === '%' ? (
             <View style={styles.returnView}>
               <View style={styles.underView}>
                 <TouchableOpacity onPress={() => handelEuation(key)}>
@@ -81,7 +92,7 @@ const NewCalculator = () => {
                 </TouchableOpacity>
               </View>
             </View>
-           : key === 'C' ? 
+          ) : key === 'C' ? (
             <View style={styles.returnView}>
               <View style={styles.underView}>
                 <TouchableOpacity onPress={() => handelClear()}>
@@ -104,7 +115,7 @@ const NewCalculator = () => {
                 </TouchableOpacity>
               </View>
             </View>
-           : key === 'DEL' ? 
+          ) : key === 'DEL' ? (
             <View style={styles.returnView}>
               <View style={styles.underView}>
                 <TouchableOpacity onPress={() => handelDelet()}>
@@ -127,7 +138,7 @@ const NewCalculator = () => {
                 </TouchableOpacity>
               </View>
             </View>
-          : key === '=' ? 
+          ) : key === '=' ? (
             <View style={styles.returnView}>
               <View style={styles.underView}>
                 <TouchableOpacity onPress={() => handelEqual()}>
@@ -150,7 +161,7 @@ const NewCalculator = () => {
                 </TouchableOpacity>
               </View>
             </View>
-           : 
+          ) : (
             <View style={styles.returnView}>
               <View style={styles.underView}>
                 <TouchableOpacity onPress={() => handelEuation(key)}>
@@ -173,10 +184,10 @@ const NewCalculator = () => {
                 </TouchableOpacity>
               </View>
             </View>
-          ;
+          );
         })}
       </View>
-      <StatusBar backgroundColor='white' barStyle='light-content' />
+      <StatusBar backgroundColor="white" barStyle="light-content" />
     </View>
   );
 };
@@ -195,7 +206,6 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   InputView: {
-
     flex: 1.3,
     flexWrap: 'wrap',
     flexDirection: 'row',
@@ -217,7 +227,6 @@ const styles = StyleSheet.create({
     color: 'white',
     padding: 11,
     // backgroundColor: '#f1f6fe'
-  
   },
   underView: {
     height: 68,
@@ -229,10 +238,10 @@ const styles = StyleSheet.create({
     borderRadius: 100,
     shadowOpacity: 1,
     shadowColor: 'red',
-    shadowOffset : {height: 5, width: 6},
+    shadowOffset: {height: 5, width: 6},
     shadowRadius: 5,
     borderWidth: 0.1,
-    borderColor: 'black'
+    borderColor: 'black',
   },
   red: {
     color: 'green',
