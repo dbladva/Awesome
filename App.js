@@ -11,18 +11,19 @@ import Rnfclc from './src/container/Rnfclc'
 import Calculator from './src/container/Calculator'
 import BMIcalculator from './src/container/BMIcalculator'
 import NewCalculator from './src/container/NewCalculator'
-import Theme from './src/container/Theme'
-import GST from './src/container/GST'
+import GSTcalculator from './src/container/GSTcalculator'
+// import Theme from './src/container/Theme'
+// import GST from './src/container/GST'
 
 
 
 export default function App() { 
   return (
     <View style={{flex: 1}}>
-      {/* <BMIcalculator /> */}
-      {/* <GSTcalculator /> */}
       {/* <NewCalculator /> */}
-   <Theme />
+      {/* <BMIcalculator /> */}
+      <GSTcalculator />
+   {/* <Theme /> */}
    {/* <GST/> */}
     </View>
   );

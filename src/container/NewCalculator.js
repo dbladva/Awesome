@@ -55,8 +55,6 @@ const NewCalculator = () => {
     <View style={styles.container}>
       <View style={styles.OutputView}>
 
-      
-
         
         <Text style={styles.resultText}>{equation}</Text>
       </View>
@@ -70,7 +68,7 @@ const NewCalculator = () => {
             key === '%' ? (
             <View style={styles.returnView}>
               <View style={styles.underView}>
-                <TouchableOpacity onPress={() => handelEuation(key)}>
+                <TouchableOpacity onPress={() => handelEuation(key)}> 
                   <Text
                     style={[
                       styles.DataText,
