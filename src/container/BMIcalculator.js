@@ -15,14 +15,14 @@ export default function BMIcalculator() {
     count = count.toFixed(2);
     setResult(count);
 
-    if (result < 18.5) {
+    if (count < 18.5) {
       setBmiResult('UnderWeight');
-    } else if (result >= 18.5 && result < 25) {
+    } else if (count >= 18.5 && count < 25) {
       setBmiResult('Normal');
-    } else if (result >= 25 && result <= 30) {
+    } else if (count >= 25 && count <= 30) {
       setBmiResult('OverWeight');
-    } else if (result > 30) {
-      setBmiResult('Obesity');
+    } else if (count > 30) {
+      setBmiResult('Obesity');  
     } else {
       ('Calculate Result :');
     }

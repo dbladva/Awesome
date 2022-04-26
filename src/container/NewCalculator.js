@@ -6,7 +6,6 @@ import {
   TouchableOpacity,
   StatusBar,
 } from 'react-native';
-import Toggle from 'react-native-toggle-element';
 
 const NewCalculator = () => {
   const arr = [
@@ -56,24 +55,7 @@ const NewCalculator = () => {
     <View style={styles.container}>
       <View style={styles.OutputView}>
 
-      <ToggleButton
-  value={toggleValue}
-  onPress={(newState) => setToggleValue(newState)}
-  thumbActiveComponent={
-    <Icon name="sun" width="40" height="40" fill={'#3BD2B5'} />
-  }
-  thumbInActiveComponent={
-    <Icon name="night" width="40" height="40" fill={'#03452C'} />
-  }
-  trackBar={{
-    activeBackgroundColor: '#9ee3fb',
-    inActiveBackgroundColor: '#3c4145',
-    borderActiveColor: '#86c3d7',
-    borderInActiveColor: '#1c1c1c',
-    borderWidth: 5,
-    width: 100,
-  }}
-/>
+      
 
         
         <Text style={styles.resultText}>{equation}</Text>
@@ -254,10 +236,11 @@ const styles = StyleSheet.create({
     borderRadius: 100,
     shadowOpacity: 1,
     shadowColor: 'red',
-    shadowOffset: {height: 5, width: 6},
+    shadowOffset: {height: 4, width: 4},
     shadowRadius: 5,
     borderWidth: 0.1,
     borderColor: 'black',
+    elevation: 1,
   },
   red: {
     color: 'green',
