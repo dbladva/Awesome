@@ -29,11 +29,30 @@ export default class Rnclc extends Component {
 
   render() {
     return (
-      <View >
-          <Text>
-            {this.state.time.toLocaleTimeString()}
-          </Text>
-      </View>   
+      <View
+        style={{
+          flex: 1,
+          alignItems: 'center',
+          justifyContent: 'center',
+          backgroundColor: 'black',
+          padding: 10,
+        }}>
+        <Text
+          style={{
+            color: 'white',
+            fontSize: 40,
+            shadowOpacity: 2,
+            fontWeight: 'bold',
+            shadowColor: '#ADA19F',
+            shadowOffset: {height: 6, width: 5},
+            shadowRadius: 2,
+          }}>
+          {this.state.time.toLocaleTimeString()}
+        </Text>
+        <Text style={{fontSize: 25,color: 'white',}}>
+          {this.state.time.toLocaleDateString()}
+        </Text>
+      </View>
     );
   }
 }

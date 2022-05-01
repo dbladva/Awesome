@@ -21,11 +21,9 @@ export default function Rnfclc() {
 
 
     return (
-        <View style={{ backgroundColor: "rgba(184, 43, 199, 0.17),", borderRadius: 10, padding: 10 }}>
+        <View style={{ flex: 1,alignItems: 'center',justifyContent: 'center',backgroundColor: "rgba(184, 43, 199, 0.17),", borderRadius: 10, padding: 10 }}>
             <Text style={{ fontSize: 40, shadowOpacity: 2, fontWeight: 'bold', shadowColor: '#ADA19F', shadowOffset: { height: 6, width: 5 }, shadowRadius: 2 }}>{Time.toLocaleTimeString()}</Text>
             <Text style={{ fontSize: 25, }}>{Time.toDateString()}</Text>
-
-        
         </View>
     )
 }
