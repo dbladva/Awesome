@@ -6,8 +6,8 @@ import Destructuring from './src/container/Desturcturing'
 import Medi_State_Fun from './src/container/Medi_State_Fun'
 import Medi_State_class from './src/container/Medi_State_class'
 import Props_Medi_Demo from './src/container/Props_Medi_Demo'
-import Rnclc from './src/container/Rnclc'
-import Rnfclc from './src/container/Rnfclc'
+import Rnclc from './src/container/Watch/Rnclc'
+import Rnfclc from './src/container/Watch/Rnfclc'
 import Kbc from './src/component/Kbc'
 import BMIcalculator from './src/container/Calculator/BMIcalculator'
 import GSTcalculator from './src/container/Calculator/GSTcalculator'
@@ -21,8 +21,9 @@ export default function App() {
     <View style={{ flex: 1 }}>
 
       {/* <NewCalculator /> */}
-      <BMIcalculator />
+      {/* <BMIcalculator /> */}
       {/* <GSTcalculator /> */}
+      <Rnclc />
 
     </View>
   );
